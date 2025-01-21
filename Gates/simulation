@@ -1,0 +1,75 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x59867e5258e0 .scope module, "gates_tb" "gates_tb" 2 4;
+ .timescale 0 0;
+v0x59867e53af50_0 .var "a", 0 0;
+v0x59867e53b010_0 .var "b", 0 0;
+v0x59867e53b0b0_0 .net "y1", 0 0, L_0x59867e53b460;  1 drivers
+v0x59867e53b150_0 .net "y2", 0 0, L_0x59867e53b5c0;  1 drivers
+v0x59867e53b220_0 .net "y3", 0 0, L_0x59867e53b680;  1 drivers
+v0x59867e53b2c0_0 .net "y4", 0 0, L_0x59867e53b870;  1 drivers
+v0x59867e53b390_0 .net "y5", 0 0, L_0x59867e53b990;  1 drivers
+S_0x59867e525a70 .scope module, "uut" "gates" 2 11, 3 1 0, S_0x59867e5258e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y1";
+    .port_info 3 /OUTPUT 1 "y2";
+    .port_info 4 /OUTPUT 1 "y3";
+    .port_info 5 /OUTPUT 1 "y4";
+    .port_info 6 /OUTPUT 1 "y5";
+L_0x59867e53b460 .functor AND 1, v0x59867e53af50_0, v0x59867e53b010_0, C4<1>, C4<1>;
+L_0x59867e53b5c0 .functor OR 1, v0x59867e53af50_0, v0x59867e53b010_0, C4<0>, C4<0>;
+L_0x59867e53b680 .functor XOR 1, v0x59867e53af50_0, v0x59867e53b010_0, C4<0>, C4<0>;
+L_0x59867e53b7d0 .functor AND 1, v0x59867e53af50_0, v0x59867e53b010_0, C4<1>, C4<1>;
+L_0x59867e53b870 .functor NOT 1, L_0x59867e53b7d0, C4<0>, C4<0>, C4<0>;
+L_0x59867e53b8e0 .functor OR 1, v0x59867e53af50_0, v0x59867e53b010_0, C4<0>, C4<0>;
+L_0x59867e53b990 .functor NOT 1, L_0x59867e53b8e0, C4<0>, C4<0>, C4<0>;
+v0x59867e4eb490_0 .net *"_ivl_10", 0 0, L_0x59867e53b8e0;  1 drivers
+v0x59867e53a820_0 .net *"_ivl_6", 0 0, L_0x59867e53b7d0;  1 drivers
+v0x59867e53a900_0 .net "a", 0 0, v0x59867e53af50_0;  1 drivers
+v0x59867e53a9a0_0 .net "b", 0 0, v0x59867e53b010_0;  1 drivers
+v0x59867e53aa60_0 .net "y1", 0 0, L_0x59867e53b460;  alias, 1 drivers
+v0x59867e53ab70_0 .net "y2", 0 0, L_0x59867e53b5c0;  alias, 1 drivers
+v0x59867e53ac30_0 .net "y3", 0 0, L_0x59867e53b680;  alias, 1 drivers
+v0x59867e53acf0_0 .net "y4", 0 0, L_0x59867e53b870;  alias, 1 drivers
+v0x59867e53adb0_0 .net "y5", 0 0, L_0x59867e53b990;  alias, 1 drivers
+    .scope S_0x59867e5258e0;
+T_0 ;
+    %vpi_call 2 23 "$monitor", "Time=%0t a=%b b=%b y1=%b y2=%b y3=%b y4=%b y5=%b", $time, v0x59867e53af50_0, v0x59867e53b010_0, v0x59867e53b0b0_0, v0x59867e53b150_0, v0x59867e53b220_0, v0x59867e53b2c0_0, v0x59867e53b390_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x59867e53af50_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x59867e53b010_0, 0, 1;
+    %delay 200, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x59867e53af50_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x59867e53b010_0, 0, 1;
+    %delay 200, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x59867e53af50_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x59867e53b010_0, 0, 1;
+    %delay 200, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x59867e53af50_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x59867e53b010_0, 0, 1;
+    %delay 200, 0;
+    %vpi_call 2 46 "$stop" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "gates_tb.v";
+    "gates.v";
