@@ -1,4 +1,4 @@
-# VLSI, HDL, and Computer Architecture Code Repository.
+# VLSI, HDL and Computer Architecture Code Repository.
 
 This repository contains code related to VLSI, HDL, and computer architecture projects and practice. It includes examples and implementations in Verilog and potentially other hardware description languages.
 
